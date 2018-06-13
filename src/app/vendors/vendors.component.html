@@ -1,13 +1,10 @@
 <p>
   vendors works! 
 </p>
-
-
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Lihat Vendor</button>
-  <button mat-menu-item>Penambahan Vendor</button>
-</mat-menu>
+<nav>
+  <a routerLink="/vendors">Lihat Vendors</a>
+  <a routerLink="/vendoradd"> Penambahan Vendor</a>
+</nav>
 
 <table mat-table [dataSource]='vendors'>
   <ng-container matColumnDef="name">
