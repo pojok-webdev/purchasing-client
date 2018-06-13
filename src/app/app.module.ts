@@ -11,6 +11,10 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ProductsComponent } from './products/products.component';
 import { RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component'
+import { HttpClientModule } from '@angular/common/http'
+import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material';
+import { CdkTableModule } from '@angular/cdk/table'
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { MainComponent } from './main/main.component'
     MatButtonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    MatTableModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
