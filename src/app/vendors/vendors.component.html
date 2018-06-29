@@ -6,7 +6,7 @@
   <a routerLink="/vendoradd"> Penambahan Vendor</a>
 </nav>
 
-<table mat-table [dataSource]='vendors'>
+<table mat-table [dataSource]='vendors' matSort>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> No. </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>

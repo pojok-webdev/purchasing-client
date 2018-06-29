@@ -12,9 +12,9 @@ import { CdkTableModule } from '@angular/cdk/table'
 export class ProductsComponent implements OnInit {
 products: Product[];
 dataSource = new MatTableDataSource(this.products);
-
+displayedColumns = ['name','partnumber','unit','price'];
 constructor(private productService : ProductService) { 
-    productService.getProducts(function(prd){
+    this.productService.getProducts(prd=>{
       console.log("Products are",prd)
       this.products = prd;
     })
