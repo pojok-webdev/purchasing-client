@@ -26,7 +26,7 @@ export class ProductService {
       }
     )
   }
-  saveProduct(obj){
+  saveProduct(obj,callback){
     const httpOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json'
@@ -36,9 +36,11 @@ export class ProductService {
     this.prod.subscribe(
       data=>{
         console.log("Success save product",data)
+        callback(data)
       },
       err=>{
         console.log("Error",err)
+        callback(err)
       }
     )
   }
