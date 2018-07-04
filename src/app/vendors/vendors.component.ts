@@ -1,9 +1,7 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { VendorService } from './../vendor.service'
 import { Vendor } from './vendor';
-import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource, MatSort } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table'
 
 @Component({
   selector: 'app-vendors',
