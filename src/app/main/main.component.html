@@ -1,8 +1,14 @@
-<p>
-  padiNET Purchase App
-</p>
-
-<nav>
-  <a routerLink="/vendors"> Vendors</a>
-  <a routerLink="/products">Products</a>
-</nav>
+<mat-menu #submissions="matMenu">
+  <button mat-menu-item routerLink="/addsubmission">Make submission</button>
+  <button mat-menu-item routerLink="/submissions">Show Submissions</button>
+</mat-menu>
+<mat-menu #masters="matMenu">
+  <button mat-menu-item routerLink="/vendors">Vendors</button>
+  <button mat-menu-item routerLink="/products">Products</button>
+</mat-menu>
+<mat-menu #appMenu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item [matMenuTriggerFor]="masters">Masters</button>
+  <button mat-menu-item [matMenuTriggerFor]="submissions">Submission</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="appMenu" yPosition="above">Menu</button>
