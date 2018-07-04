@@ -7,6 +7,7 @@ import { ProductAddComponent } from '../app/product-add/product-add.component'
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'/main',pathMatch:'full'},
   {path:'vendors',component:VendorsComponent},
   {path:'products',component:ProductsComponent},
   {path:'productadd',component:ProductAddComponent},

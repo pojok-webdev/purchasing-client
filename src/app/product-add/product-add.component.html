@@ -1,3 +1,6 @@
-<p>
-  product-add works!
-</p>
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/products">Products</button>
+  <button mat-menu-item routerLink="/productadd">Add Product</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Product</button>
