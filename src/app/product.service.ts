@@ -20,6 +20,7 @@ export class ProductService {
       },
       err=>{
         console.log("Error",err);
+        console.log("Pastikan server running",err.message)
         callback(err)
       }
     )
