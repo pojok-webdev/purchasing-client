@@ -1,10 +1,11 @@
-<p>
-  vendors works! 
-</p>
-<nav>
-  <a routerLink="/vendors">Lihat Vendors</a>
-  <a routerLink="/vendoradd"> Penambahan Vendor</a>
-</nav>
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/vendors">Vendors</button>
+  <button mat-menu-item routerLink="/vendorsadd">Add Vendor</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Vendor</button>
+
+
 
 <table mat-table [dataSource]='vendors' matSort>
   <ng-container matColumnDef="name">
