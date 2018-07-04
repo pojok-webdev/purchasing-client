@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Product } from './products/product'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  prod:Observable<Product[]>
+  prods:Observable<Product[]>
+  prod:Observable<Product>
   constructor(private http:HttpClient) { 
     
   }
   getProducts(callback){
-    this.prod = this.http.get<Product[]>('http://localhost:2018/getproducts')
-    this.prod.subscribe(
+    this.prods = this.http.get<Product[]>('http://localhost:2018/getproducts')
+    this.prods.subscribe(
       data=>{
         console.log("Success",data)
         callback(data)
@@ -25,8 +26,20 @@ export class ProductService {
       }
     )
   }
-  saveProduct(){
-    return 'product saved'
+  saveProduct(obj){
+    const httpOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    }
+    this.prod = this.http.post<Product>('http://localhost:2018/saveproduct',obj,httpOptions)
+    this.prod.subscribe(
+      data=>{
+        console.log("Success save product",data)
+      },
+      err=>{
+        console.log("Error",err)
+      }
+    )
   }
-
 }

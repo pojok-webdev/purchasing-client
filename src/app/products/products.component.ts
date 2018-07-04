@@ -18,7 +18,6 @@ constructor(private productService : ProductService) {
       console.log("Products are",prd)
       this.products = prd;
     })
-    console.log("SaveService",productService.saveProduct())
   }
 
   ngOnInit() {

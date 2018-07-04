@@ -4,3 +4,21 @@
   <button mat-menu-item routerLink="/main">Home</button>
 </mat-menu>
 <button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Product</button>
+<form class="input-form">
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="product.name" [ngModelOptions]="{standalone:true}" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="product.partnumber" [ngModelOptions]="{standalone:true}"  placeholder="Part Number">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" [(ngModel)]="product.unit" [ngModelOptions]="{standalone:true}"  matInput placeholder="Unit">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="product.discountlevel" [ngModelOptions]="{standalone:true}"  placeholder="Discount Level">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="product.price" [ngModelOptions]="{standalone:true}"  placeholder="Price">
+  </mat-form-field>
+  <button mat-button (click)="saveProduct()">Save</button>
+</form>

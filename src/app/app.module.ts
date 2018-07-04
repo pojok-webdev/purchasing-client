@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ProductAddComponent } from './product-add/product-add.component'
+import { MatInputModule } from '@angular/material/input'
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ProductAddComponent } from './product-add/product-add.component'
     RouterModule,
     HttpClientModule,
     MatTableModule,
-    CdkTableModule
+    CdkTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
