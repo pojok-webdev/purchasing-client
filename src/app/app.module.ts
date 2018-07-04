@@ -13,15 +13,16 @@ import { RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component'
 import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table';
-import { MatTableDataSource } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table'
+import { CdkTableModule } from '@angular/cdk/table';
+import { ProductAddComponent } from './product-add/product-add.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     VendorsComponent,
     ProductsComponent,
-    MainComponent
+    MainComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
