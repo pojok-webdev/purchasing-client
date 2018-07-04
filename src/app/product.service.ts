@@ -44,4 +44,22 @@ export class ProductService {
       }
     )
   }
+  updateProduct(obj,callback){
+    const httpOptions = {
+      headers:new HttpHeaders({
+        'Content-Type':'application/json'
+      })
+    }
+    this.prod = this.http.post<Product>('http://localhost:2018/updateproduct',obj,httpOptions)
+    this.prod.subscribe(
+      data=>{
+        console.log("Success update",data)
+        callback(data)
+      },
+      err=>{
+        console.log("Err update",err)
+        callback(err)
+      }
+    )
+  }
 }
