@@ -4,18 +4,24 @@
   <button mat-menu-item routerLink="/main">Home</button>
 </mat-menu>
 <button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Submission</button>
-<form class="input-form">
+<form class="input-form" name="submission">
   <mat-form-field class="input-full-width">
-    <input type="text" matInput [(ngModel)]="obj.submission_date" name="submission_date" id="submission_date" placeholder="Submission Date">
+    <input type="text" matInput [matDatepicker]="subm_date" [(ngModel)]="obj.submission_date" name="submission_date" id="submission_date" placeholder="Submission Date">
+    <mat-datepicker-toggle matSuffix [for]="subm_date"></mat-datepicker-toggle>
+    <mat-datepicker #subm_date></mat-datepicker>
   </mat-form-field>
   <mat-form-field class="input-full-width">
     <input type="text" matInput [(ngModel)]="obj.staff_name" name="staff_name" id="staff_name" placeholder="Staff Name">
   </mat-form-field>
   <mat-form-field class="input-full-width">
-    <input type="text" matInput [(ngModel)]="obj.implementation_target" name="implementation_target" id="implementation_target" placeholder="Implementation Target">
+    <input type="text" matInput [matDatepicker]="impl_target" [(ngModel)]="obj.implementation_target"  [ngModelOptions]="{standalone:true}" placeholder="Implementation Target">
+    <mat-datepicker-toggle matSuffix [for]="impl_target"></mat-datepicker-toggle>
+    <mat-datepicker #impl_target></mat-datepicker>
   </mat-form-field>
   <mat-form-field class="input-full-width">
-    <input type="text" matInput [(ngModel)]="obj.purchase_target" name="purchase_target" id="purchase_target" placeholder="Purchase Target">
+    <input type="text" matInput [matDatepicker]="purc_target" [(ngModel)]="obj.purchase_target" name="purchase_target" id="purchase_target" placeholder="Purchase Target" required="Purchase Target should not be empty" />
+    <mat-datepicker-toggle matSuffix [for]="purc_target"></mat-datepicker-toggle>
+    <mat-datepicker #purc_target></mat-datepicker>
   </mat-form-field>
   <button mat-button (click)="saveSubmission(obj)">Save</button>
 </form>

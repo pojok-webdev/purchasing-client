@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './../product.service';
 import { Product } from './product'
-import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material';
-import { CdkTableModule } from '@angular/cdk/table'
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',

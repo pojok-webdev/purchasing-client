@@ -4,3 +4,25 @@
   <button mat-menu-item routerLink="/main">Home</button>
 </mat-menu>
 <button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Submission</button>
+<table mat-table [dataSource]='submissions'>
+  <ng-container matColumnDef="submission_date">
+    <th mat-header-cell *matHeaderCellDef> Subscription Date. </th>
+    <td mat-cell *matCellDef="let element" (click)="editSubmission(element)"> {{element.submission_date}} </td>
+  </ng-container>
+  <ng-container matColumnDef="staff_name">
+    <th mat-header-cell *matHeaderCellDef> Staff Name. </th>
+    <td mat-cell *matCellDef="let element"> {{element.staff_name}} </td>
+  </ng-container>
+  <ng-container matColumnDef="implementation_target">
+    <th mat-header-cell *matHeaderCellDef> Implementation Target. </th>
+    <td mat-cell *matCellDef="let element"> {{element.implementation_target}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="purchase_target">
+    <th mat-header-cell *matHeaderCellDef> Purchase Target. </th>
+    <td mat-cell *matCellDef="let element"> {{element.purchase_target}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
