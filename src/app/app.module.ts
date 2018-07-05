@@ -15,7 +15,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatTableModule } from '@angular/material/table';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ProductAddComponent } from './product-add/product-add.component'
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { ProductUpdateComponent } from './product-update/product-update.component';
+import { SubmissionAddComponent } from './submission-add/submission-add.component';
+import { SubmissionsComponent } from './submissions/submissions.component'
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { MatInputModule } from '@angular/material/input'
     VendorsComponent,
     ProductsComponent,
     MainComponent,
-    ProductAddComponent
+    ProductAddComponent,
+    ProductUpdateComponent,
+    SubmissionAddComponent,
+    SubmissionsComponent
   ],
   imports: [
     BrowserModule,
