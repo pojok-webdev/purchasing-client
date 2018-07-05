@@ -19,7 +19,10 @@ constructor(private productService : ProductService) {
       this.products = prd;
     })
   }
-
+  editProduct(element){
+    console.log("Element to edit",element)
+    window.location.href = "/productupdate/"+element.id
+  }
   ngOnInit() {
   }
 
