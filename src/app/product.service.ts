@@ -26,6 +26,18 @@ export class ProductService {
       }
     )
   }
+  getProduct(id,callback){
+    this.prod = this.http.get<Product>('http://localhost:2018/getproduct/'+id)
+    this.prod.subscribe(
+      data=>{
+        console.log("ID",id)
+        callback(data)
+      },
+      err=>{
+        callback(err)
+      }
+    )
+  }
   saveProduct(obj,callback){
     const httpOptions = {
       headers:new HttpHeaders({
@@ -45,6 +57,7 @@ export class ProductService {
     )
   }
   updateProduct(obj,callback){
+    console.log("OBJ to send",obj)
     const httpOptions = {
       headers:new HttpHeaders({
         'Content-Type':'application/json'
