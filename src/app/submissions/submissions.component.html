@@ -1,0 +1,6 @@
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/submissions">Submissions</button>
+  <button mat-menu-item routerLink="/submissionadd">Add Submission</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Submission</button>

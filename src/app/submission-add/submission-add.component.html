@@ -1,0 +1,21 @@
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/submissions">Submissions</button>
+  <button mat-menu-item routerLink="/submissionadd">Add Submission</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Submission</button>
+<form class="input-form">
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.submission_date" name="submission_date" id="submission_date" placeholder="Submission Date">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.staffname" name="staffname" id="staffname" placeholder="Staff Name">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.implementation_target" name="implementation_target" id="implementation_target" placeholder="Implementation Target">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.purchase_target" name="purchase_target" id="purchase_target" placeholder="Purchase Target">
+  </mat-form-field>
+  <button mat-button (click)="saveSubmission(obj)">Save</button>
+</form>

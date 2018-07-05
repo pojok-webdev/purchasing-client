@@ -1,0 +1,24 @@
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/products">Products</button>
+  <button mat-menu-item routerLink="/productadd">Add Product</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Product</button>
+<form class="input-form">
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.name" [ngModelOptions]="{standalone:true}" placeholder="Name">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.partnumber" [ngModelOptions]="{standalone:true}"  placeholder="Part Number">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" [(ngModel)]="obj.unit" [ngModelOptions]="{standalone:true}"  matInput placeholder="Unit">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.discountlevel" [ngModelOptions]="{standalone:true}"  placeholder="Discount Level">
+  </mat-form-field>
+  <mat-form-field class="input-full-width">
+    <input type="text" matInput [(ngModel)]="obj.price" [ngModelOptions]="{standalone:true}"  placeholder="Price">
+  </mat-form-field>
+  <button mat-button (click)="updateProduct(obj)">Update</button>
+</form>
