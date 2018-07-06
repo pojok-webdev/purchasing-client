@@ -19,7 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 import { SubmissionAddComponent } from './submission-add/submission-add.component';
 import { SubmissionsComponent } from './submissions/submissions.component'
-import { MatDatepickerModule } from '@angular/material';
+import { MatDatepickerModule, MatSelectModule } from '@angular/material';
 import { MatNativeDateModule } from '@angular/material'
 import { DatePipe } from '@angular/common';
 
@@ -47,7 +47,8 @@ import { DatePipe } from '@angular/common';
     CdkTableModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
   providers: [
     DatePipe

@@ -11,7 +11,7 @@ import { Submission } from './submission';
 export class SubmissionsComponent implements OnInit {
 submissions : Submission[]
   dataSource// = new MatTableDataSource(this.submissions);
-  displayedColumns = ['submission_date','staff_name','implementation_target','purchase_target'];
+  displayedColumns = ['submission_date','staff_name','implementation_target','purchase_target','detail'];
     constructor(private submissionService:SubmissionService) {
       this.submissionService.getSubmissions(result=>{
         console.log("Result",result)
