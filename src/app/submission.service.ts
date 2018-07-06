@@ -9,6 +9,8 @@ import { Submission } from './submissions/submission';
 export class SubmissionService {
 submissions : Observable<Submission[]>
 submission: Observable<Submission>
+details: Observable<any[]>
+detail: Observable<any>
 httpOptions = {
   headers:new HttpHeaders({
     'Content-Type':'Application/json'
@@ -37,6 +39,20 @@ httpOptions = {
       },
       err=>{
         console.log("Error save submission",err)
+        callback(err)
+      }
+    )
+  }
+  getSubmissionDetails(obj,callback){
+    console.log("OBJ",obj.submission_id)
+    this.details = this.httpClient.get<any[]>('http://localhost:2018/getsubmissiondetails/'+obj.submission_id)
+    this.details.subscribe(
+      data => {
+        console.log("Success get details",data)
+        callback(data)
+      },
+      err => {
+        console.log("Error get details",err)
         callback(err)
       }
     )

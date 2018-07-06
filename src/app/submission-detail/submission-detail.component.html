@@ -1,0 +1,27 @@
+<mat-menu #submenu="matMenu">
+  <button mat-menu-item routerLink="/submissions">Submissions</button>
+  <button mat-menu-item routerLink="/submissionadd">Add Submission</button>
+  <button mat-menu-item routerLink="/main">Home</button>
+</mat-menu>
+<button mat-button [matMenuTriggerFor]="submenu" yPosition="above">Submission</button>
+<table mat-table [dataSource]='objs'>
+  <ng-container matColumnDef="itemname">
+    <th mat-header-cell *matHeaderCellDef> Item Name. </th>
+    <td mat-cell *matCellDef="let element"> {{element.itemname}} </td>
+  </ng-container>
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef> Brand. </th>
+    <td mat-cell *matCellDef="let element"> {{element.brand}} </td>
+  </ng-container>
+  <ng-container matColumnDef="detail">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element">
+       <mat-select placeholder="Choose Action">
+          <mat-option routerLink="/submissiondetailedit/{{element.id}}">Edit</mat-option>
+          <mat-option>Hapus</mat-option>
+       </mat-select> 
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

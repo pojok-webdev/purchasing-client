@@ -22,6 +22,8 @@ import { SubmissionsComponent } from './submissions/submissions.component'
 import { MatDatepickerModule, MatSelectModule } from '@angular/material';
 import { MatNativeDateModule } from '@angular/material'
 import { DatePipe } from '@angular/common';
+import { SubmissionDetailComponent } from './submission-detail/submission-detail.component';
+import { SubmissionDetaileditComponent } from './submission-detailedit/submission-detailedit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { DatePipe } from '@angular/common';
     ProductAddComponent,
     ProductUpdateComponent,
     SubmissionAddComponent,
-    SubmissionsComponent
+    SubmissionsComponent,
+    SubmissionDetailComponent,
+    SubmissionDetaileditComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ import { ProductUpdateComponent } from '../app/product-update/product-update.com
 import { MainComponent } from './main/main.component';
 import { SubmissionAddComponent } from './submission-add/submission-add.component';
 import { SubmissionsComponent } from './submissions/submissions.component';
+import { SubmissionDetailComponent } from './submission-detail/submission-detail.component';
+import { SubmissionDetaileditComponent } from './submission-detailedit/submission-detailedit.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/main',pathMatch:'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path:'productupdate/:product_id',component:ProductUpdateComponent},
   {path:'submissionadd',component:SubmissionAddComponent},
   {path:'submissions',component:SubmissionsComponent},
+  {path:'submissiondetails/:submission_id',component:SubmissionDetailComponent},
+  {path:'submissiondetailedit/:id',component:SubmissionDetaileditComponent},
   {path:'main',component:MainComponent}
 ]
 @NgModule({
